@@ -8,7 +8,8 @@ var http = require('http');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
-var testPage = require('./routes/testPage');
+var testPageSleep = require('./routes/testPageSleep');
+var testPageAccess = require('./routes/testPageAccess');
 
 var app = express();
 
@@ -29,8 +30,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 app.use('/users', users);
 
-//access url
-app.use('/access/testPage/api/test', testPage);
+//Test Page Sleep for 5 seconds
+app.use('/access/testPage/sleep', testPageSleep);
+
+//Test Page access
+app.use('/access/testPage/try', testPageAccess);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
