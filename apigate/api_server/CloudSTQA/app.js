@@ -12,7 +12,7 @@ var testPage = require('./routes/testPage');
 
 var app = express();
 
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 7700);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
