@@ -8,8 +8,13 @@ var http = require('http');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
-var testPageSleep = require('./routes/testPageSleep');
 var testPageAccess = require('./routes/testPageAccess');
+var testPageSleep = require('./routes/testPageSleep');
+var testPageTimeOut = require('./routes/testPageTimeOut');
+var ModifyHeaders = require('./routes/ModifyHeaders');
+var MockResponse = require('./routes/MockResponse');
+var param = require('./routes/param');
+var cookie_info = require('./routes/cookie_info');
 
 var app = express();
 
@@ -30,11 +35,29 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 app.use('/users', users);
 
+//------------Test Server API development-----------
+//Test Page access
+app.use('/access/testPage/try', testPageAccess);
+
 //Test Page Sleep for 5 seconds
 app.use('/access/testPage/sleep', testPageSleep);
 
-//Test Page access
-app.use('/access/testPage/try', testPageAccess);
+//Test Page time out
+app.use('/access/testPage/timeOut', testPageTimeOut);
+
+//Obtain Parameter with GET/POST method 
+app.use('/access/param', param);
+
+//Test Send cookie and Client info
+app.use('/access/cookie', cookie_info);
+
+//Test Modify Headers
+app.use('/ModifyHeaders', ModifyHeaders);
+
+//Test Mock Response
+app.use('/MockResponse', MockResponse);
+
+//--------------------------------------------------
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -42,7 +65,6 @@ app.use(function(req, res, next) {
   err.status = 404;
   next(err);
 });
-
 
 // error handler
 app.use(function(err, req, res, next) {
