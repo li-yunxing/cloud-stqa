@@ -7,15 +7,15 @@ router.use('/', function(req, res, next) {
 
 		var Accept_Language = req.header('Accept-Language');
 		console.log(Accept_Language);
-		res.setHeader('Content-Type', 'fromServer/stqa');
-		res.end('Server response header Content-Type with fromServer/stqa');	
+		res.setHeader('Content-Type', 'cloud/stqa;charset=UTF-8');
+		res.end('Server response header Content-Type with cloud/stqa;charset=UTF-8');	
 		
 	}else if(req.method == 'POST'){
 		
 		var Accept_Language = req.header('Accept-Language');
 		console.log(Accept_Language);
-		res.setHeader('Content-Type', 'fromServer/stqa');
-		res.end('Server response header Content-Type with fromServer/stqa');	
+		res.setHeader('Content-Type', 'cloud/stqa;charset=UTF-8');
+		res.end('Server response header Content-Type with cloud/stqa;charset=UTF-8');	
 	}
 });
 
