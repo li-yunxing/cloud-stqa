@@ -15,6 +15,7 @@ var ModifyHeaders = require('./routes/ModifyHeaders');
 var MockResponse = require('./routes/MockResponse');
 var param = require('./routes/param');
 var cookie_info = require('./routes/cookie_info');
+var client_info = require('./routes/client_info');
 
 var app = express();
 
@@ -48,8 +49,11 @@ app.use('/access/testPage/timeOut', testPageTimeOut);
 //Obtain Parameter with GET/POST method 
 app.use('/access/param', param);
 
-//Test Send cookie and Client info
+//Test Send cookie
 app.use('/access/cookie', cookie_info);
+
+//Test Send Client info
+app.use('/access/clientInfo', client_info);
 
 //Test Modify Headers
 app.use('/ModifyHeaders', ModifyHeaders);
