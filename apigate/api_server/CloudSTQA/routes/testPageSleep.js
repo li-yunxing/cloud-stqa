@@ -1,6 +1,5 @@
 var express = require('express');
 var router = express.Router();
-//var sleep = require('sleep-async')();
 
 router.get('/', function(req, res, next) {
   var fiveSecond = 1000 * 5;
