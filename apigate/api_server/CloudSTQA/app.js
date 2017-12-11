@@ -17,6 +17,7 @@ var param = require('./routes/param');
 var cookie_info = require('./routes/cookie_info');
 var client_info = require('./routes/client_info');
 var URLRewrite = require('./routes/URLRewrite');
+var fileUpload = require('./routes/fileUpload');
 
 var app = express();
 
@@ -55,6 +56,9 @@ app.use('/access/cookie', cookie_info);
 
 //Test Send Client info
 app.use('/access/clientInfo', client_info);
+
+//File Upload
+app.use('/fileUpload', fileUpload);
 
 //Test Modify Headers
 app.use('/ModifyHeaders', ModifyHeaders);
