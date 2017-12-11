@@ -16,6 +16,7 @@ var MockResponse = require('./routes/MockResponse');
 var param = require('./routes/param');
 var cookie_info = require('./routes/cookie_info');
 var client_info = require('./routes/client_info');
+var URLRewrite = require('./routes/URLRewrite');
 
 var app = express();
 
@@ -60,6 +61,9 @@ app.use('/ModifyHeaders', ModifyHeaders);
 
 //Test Mock Response
 app.use('/MockResponse', MockResponse);
+
+//URL Rewrite
+app.use('/access/testPage/URLRewrite', URLRewrite);
 
 //--------------------------------------------------
 
