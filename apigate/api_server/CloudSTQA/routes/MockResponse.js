@@ -7,13 +7,13 @@ router.use('/', function(req, res, next) {
 
 		res.setHeader('Content-Type', 'cloud/stqa;charset=UTF-8');
 		res.setHeader('Content-Language', 'cn');
-		res.end('Server response header Content-Type with cloud/stqa;charset=UTF-8; Content-Language with cn');	
+		res.end('Server response header info - Content-Type: cloud/stqa;charset=UTF-8; Content-Language: cn');	
 		
 	}else if(req.method == 'POST'){
 		
 		res.setHeader('Content-Type', 'cloud/stqa;charset=UTF-8');
 		res.setHeader('Content-Language', 'cn');
-		res.end('Server response header Content-Type with cloud/stqa;charset=UTF-8; Content-Language with cn');
+		res.end('Server response header info - Content-Type: cloud/stqa;charset=UTF-8; Content-Language: cn');	
 	}
 });
 

@@ -18,6 +18,9 @@ var cookie_info = require('./routes/cookie_info');
 var client_info = require('./routes/client_info');
 var URLRewrite = require('./routes/URLRewrite');
 var fileUpload = require('./routes/fileUpload');
+var ServerRes = require('./routes/ServerRes');
+var ServerCra = require('./routes/ServerCra');
+var ResBiggerBody = require('./routes/ResBiggerBody');
 
 var app = express();
 
@@ -59,6 +62,15 @@ app.use('/access/clientInfo', client_info);
 
 //File Upload
 app.use('/fileUpload', fileUpload);
+
+//Test Server Response with not 200
+app.use('/ServerRes', ServerRes);
+
+//Test Server Crash 
+app.use('/ServerCra', ServerCra);
+
+//Test Server Response with bigger body 
+app.use('/ResBiggerBody', ResBiggerBody);
 
 //Test Modify Headers
 app.use('/ModifyHeaders', ModifyHeaders);
