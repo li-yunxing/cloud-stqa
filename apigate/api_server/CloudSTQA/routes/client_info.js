@@ -4,7 +4,11 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
 
 	//Obtain client header info
-	console.log(req.headers);
+	var stringHeader = "";
+	
+	for(var key in req.headers){
+		stringHeader += key +":" + req.headers[key] + "\n";
+	}
 	
 	//send remote IP Address
 	const ip = res.socket.remoteAddress;
@@ -13,7 +17,13 @@ router.get('/', function(req, res, next) {
 	//send x-forwarded IP Address
 	var client_IP = req.header('x-forwarded-for');
 	
-	res.send('Your remote IP Adreess is '+ ip + ' - ' + 'port is ' + port + '; ' + 'Your x-forwarded IP Adreess is '+ client_IP);
+	//output client info with Text file
+	res.format({
+		  text: function(){
+				res.send('Your remote IP Adreess is '+ ip + ' - ' + 'port is ' + port + '\n\n' + 'Your x-forwarded IP Adreess is '+ client_IP + '\n\n' + stringHeader);
+		  }
+	
+		});
 
 	});
 

@@ -4,9 +4,13 @@ var router = express.Router();
 /* GET home page. */
 router.get('/', function(req, res, next) {
 	
-	var resp = req.query.resp;
+	var status = req.query.status;
 
-    switch (resp) { 
+    switch (status) { 
+    case '302':
+    	// log the request and respond with 302
+		res.status(302).send('Found');
+        break;       
     case '403':
     	// log the request and respond with 403
 		res.status(403).send('Forbidden');
