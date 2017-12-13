@@ -21,6 +21,7 @@ var fileUpload = require('./routes/fileUpload');
 var ServerRes = require('./routes/ServerRes');
 var ServerCra = require('./routes/ServerCra');
 var ResBiggerBody = require('./routes/ResBiggerBody');
+var BodyType = require('./routes/BodyType');
 
 var app = express();
 
@@ -72,14 +73,23 @@ app.use('/ServerCra', ServerCra);
 //Test Server Response with bigger body 
 app.use('/ResBiggerBody', ResBiggerBody);
 
+//Test Body Type
+app.use('/Body', BodyType);
+
 //Test Modify Headers
 app.use('/ModifyHeaders', ModifyHeaders);
 
 //Test Mock Response
 app.use('/MockResponse', MockResponse);
 
-//URL Rewrite
+//URL Rewrite - Pattern 1
 app.use('/access/testPage/URLRewrite', URLRewrite);
+
+//URL Rewrite - Pattern 2
+app.use('/access/012MTx7HSR1BScKL/testPage/try', URLRewrite);
+
+//URL Rewrite - Pattern 2
+app.use('/access/012MTx7HSR1BScKL/try', URLRewrite);
 
 //--------------------------------------------------
 
