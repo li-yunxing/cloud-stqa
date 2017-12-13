@@ -86,7 +86,7 @@ app.use('/MockResponse', MockResponse);
 app.use('/access/testPage/URLRewrite', URLRewrite);
 
 //URL Rewrite - Pattern 2
-app.use('/access/012MTx7HSR1BScKL/testPage/try', URLRewrite);
+app.use('/access/testPage/012MTx7HSR1BScKL/try', URLRewrite);
 
 //URL Rewrite - Pattern 2
 app.use('/access/012MTx7HSR1BScKL/try', URLRewrite);
