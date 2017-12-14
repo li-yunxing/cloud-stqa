@@ -11,6 +11,14 @@ router.use('/', function(req, res, next) {
   }else if(req.method == 'POST'){
 	
 	  res.render('access/testPage', { title: 'Cloud_STQA' });
+	  
+  }else if(req.method == 'PUT'){
+	
+	  res.render('access/testPage', { title: 'Cloud_STQA' });
+	  
+  }else if(req.method == 'DELETE'){
+	
+	  res.render('access/testPage', { title: 'Cloud_STQA' });
   }
 
 });
