@@ -4,23 +4,24 @@ var router = express.Router();
 /* GET home page. */
 router.use('/', function(req, res, next) {
 
-  if(req.method == 'GET'){
+  switch (req.method) { 
 
-	  res.render('access/result', { title: 'Cloud_STQA' });
-	
-  }else if(req.method == 'POST'){
-	
-	  res.render('access/result', { title: 'Cloud_STQA' });
-	  
-  }else if(req.method == 'PUT'){
-	
-	  res.render('access/result', { title: 'Cloud_STQA' });
-	  
-  }else if(req.method == 'DELETE'){
-	
-	  res.render('access/result', { title: 'Cloud_STQA' });
+    case 'GET':
+        res.render('access/result', { title: 'Cloud_STQA' });
+        break;
+    
+    case 'POST':
+        res.render('access/result', { title: 'Cloud_STQA' });
+        break;
+    
+    case 'PUT':
+        res.render('access/result', { title: 'Cloud_STQA' });
+        break;
+
+    case 'DELETE':
+        res.render('access/result', { title: 'Cloud_STQA' });
+        break;
   }
-
 });
 
 module.exports = router;
