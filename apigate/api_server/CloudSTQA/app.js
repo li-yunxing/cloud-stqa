@@ -87,10 +87,11 @@ app.use('/access/testPage/URLRewrite', URLRewrite);
 
 //URL Rewrite - Pattern 2
 app.use('/access2/testPage2/012MTx7HSR1BScKL/try', testPageAccess);
-
-//URL Rewrite - Pattern 2
 app.use('/access2/012MTx7HSR1BScKL/try', URLRewrite);
 
+//Test URL Pattern
+app.use('/access2/012MTx7HSR1BScKL/tre', testPageAccess);
+app.use('/access2/012MTx7HSR1BScKL/other', URLRewrite);
 //--------------------------------------------------
 
 // catch 404 and forward to error handler
