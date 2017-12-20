@@ -28,7 +28,7 @@ var BodyType = require('./routes/BodyType');
 var app = express();
 
 app.set('port', process.env.PORT || 7700);
-app.set('httpsPort', process.env.PORT || 8800);
+app.set('httpsPort', process.env.PORT || 7800);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

@@ -41,7 +41,7 @@ server.on('error', onError);
 server.on('listening', onListening);
 
 //add listening
-var httpsPort = normalizePort(process.env.PORT || '8800');  
+var httpsPort = normalizePort(process.env.PORT || '7800');  
 httpsServer.listen(httpsPort);  
 httpsServer.on('error',onError);  
 httpsServer.on('listening',onListening);
