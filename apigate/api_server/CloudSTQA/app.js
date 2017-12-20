@@ -5,6 +5,8 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var http = require('http');
+var https = require('https');
+var fs = require('fs');  
 
 var index = require('./routes/index');
 var users = require('./routes/users');
@@ -26,6 +28,7 @@ var BodyType = require('./routes/BodyType');
 var app = express();
 
 app.set('port', process.env.PORT || 7700);
+app.set('httpsPort', process.env.PORT || 8800);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -116,6 +119,16 @@ app.use(function(err, req, res, next) {
 
 http.createServer(app).listen(app.get('port'), function(){
 	  console.log('Express server listening on port ' + app.get('port'));
+	});
+
+//Create HTTPS server
+var options = {  
+	  key: fs.readFileSync('./ssl/server.key'),  
+      cert: fs.readFileSync('./ssl/server.crt')  
+    };  
+
+https.createServer(options,app).listen(app.get('httpsPort'), function(){
+	  console.log('Express server listening on port ' + app.get('httpsPort'));
 	});
 
 module.exports = app;
