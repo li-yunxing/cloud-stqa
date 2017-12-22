@@ -12,7 +12,7 @@ router.use('/', function(req, res, next) {
 
 		res.format({  			
 			  json: function(){
-			      res.send({message: 'name: ' + name +'\n\n' + 'password: ' + pwd});
+			      res.send({message: 'name: ' + name +'; ' + 'password: ' + pwd});
 			  }
 			});
 		
@@ -25,7 +25,7 @@ router.use('/', function(req, res, next) {
 		
 		res.format({  			
 			  json: function(){
-			      res.send({message: 'name: ' + name +'\n\n' + 'password: ' + pwd});
+			      res.send({message: 'name: ' + name +'; ' + 'password: ' + pwd});
 			  }
 			});
 	}
