@@ -56,7 +56,7 @@ app.use('/access/testPage/sleep', testPageSleep);
 app.use('/access/testPage/timeOut', testPageTimeOut);
 
 //Obtain Parameter with GET/POST method 
-app.use('/access/param', param);
+app.use('/access/{param}', param);
 
 //Test Send cookie
 app.use('/access/cookie', cookie_info);
@@ -98,6 +98,7 @@ app.use('/access2/012MTx7HSR1BScKL/tre', testPageAccess);
 app.use('/access2/012MTx7HSR1BScKL/other', URLRewrite);
 app.use('/test/apigw/avg', testPageAccess);
 app.use('/test/cloud/stqa/avg', URLRewrite);
+
 //--------------------------------------------------
 
 // catch 404 and forward to error handler
