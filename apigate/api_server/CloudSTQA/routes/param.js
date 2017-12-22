@@ -10,7 +10,11 @@ router.use('/', function(req, res, next) {
 		console.log(name);
 		console.log(pwd);
 
-		res.render('access/result', { name: name, pwd: pwd });
+		res.format({  			
+			  json: function(){
+			      res.send({message: 'name: ' + name +'\n' + 'password: ' + pwd});
+			  }
+			});
 		
 	}else if(req.method == 'POST'){
 		var name = req.body.name;
@@ -18,8 +22,12 @@ router.use('/', function(req, res, next) {
 		
 		console.log(name);
 		console.log(pwd);
-
-		res.render('access/result', { name: name, pwd: pwd });
+		
+		res.format({  			
+			  json: function(){
+			      res.send({message: 'name: ' + name +'\n' + 'password: ' + pwd});
+			  }
+			});
 	}
 });
 
