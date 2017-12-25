@@ -93,9 +93,9 @@ app.use('/access/testPage/URLRewrite', URLRewrite);
 app.use('/access2/testPage2/012MTx7HSR1BScKL/try', testPageAccess);
 app.use('/access2/testPage2/U9s5p8tPIS2Q44g8/try', URLRewrite);
 app.use('/access2/012MTx7HSR1BScKL/try', URLRewrite);
-app.use('/access/testPage/appkey1/try', testPageAccess);
-app.use('/access/testPage/appkey2/try', URLRewrite);
-app.use('/access/testPage/appkey5/try', testPageAccess);
+app.use('/access/appkeys/appkey1/try', testPageAccess);
+app.use('/access/appkeys/appkey2/try', URLRewrite);
+app.use('/access/appkeys/appkey5/try', testPageAccess);
 
 //Test URL Pattern
 app.use('/access2/012MTx7HSR1BScKL/tre', testPageAccess);
