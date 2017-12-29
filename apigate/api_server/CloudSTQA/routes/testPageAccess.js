@@ -5,11 +5,11 @@ var http = require("http");
 /* GET home page. */
 router.use('/', function(req, res, next) {
 	
-  var Accept_Language = req.header('Accept-Language');
   switch (req.method) { 
     
     case 'GET':
-//       res.render('access/testPage', { title: 'Cloud_STQA' });
+    	var Accept_Language = req.header('Accept-Language');
+
         if(Accept_Language == 'apigw_request'){
         	console.log(Accept_Language);
         	res.end('Server recieved header info - Accept-Language: ' + Accept_Language);	
