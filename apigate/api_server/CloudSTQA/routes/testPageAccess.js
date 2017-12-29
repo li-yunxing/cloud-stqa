@@ -14,6 +14,7 @@ router.use('/', function(req, res, next) {
         	console.log(Accept_Language);
         	res.end('Server recieved header info - Accept-Language: ' + Accept_Language);	
         }else{
+            console.log('pass the path?');
             res.render('access/testPage', { title: 'Cloud_STQA' });        	
         }
         break;
