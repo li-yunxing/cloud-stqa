@@ -11,6 +11,7 @@ router.use('/', function(req, res, next) {
     case 'GET':
 //       res.render('access/testPage', { title: 'Cloud_STQA' });
         if(Accept_Language == 'apigw_request'){
+        	console.log(Accept_Language);
         	res.end('Server recieved header info - Accept-Language: ' + Accept_Language);	
         }else{
             res.render('access/testPage', { title: 'Cloud_STQA' });        	
