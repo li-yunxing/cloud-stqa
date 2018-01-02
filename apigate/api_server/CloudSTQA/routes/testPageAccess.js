@@ -8,15 +8,22 @@ router.use('/', function(req, res, next) {
   switch (req.method) { 
     
     case 'GET':
-	
+
     	//---------------Modify Headers와 URL Rewrite 동시 적용 시 Request Headers/Response Headers 값 체크-----------------
-    	var Accept_Language = req.header('Accept-Language');       	
-        console.log(Accept_Language);
-        
-		res.setHeader('Content-Type', 'cloud/stqa;charset=UTF-8');
-		res.setHeader('x-response-header', 'x-value');
-		
-        res.end('Server recieved header info - Accept-Language: ' + Accept_Language);	
+    	var Accept_Language = req.header('Accept-Language');   
+    	console.log(Accept_Language);
+    	
+	    if(Accept_Language =='apigw_request'){
+	    	
+			res.setHeader('Content-Type', 'cloud/stqa;charset=UTF-8');
+			res.setHeader('x-response-header', 'x-value');
+			
+	        res.end('Server recieved header info - Accept-Language: ' + Accept_Language);	
+	        
+	    }else{
+	    	
+	    	res.render('access/testPage', { title: 'Cloud_STQA' });
+	    }        
         //---------------------------------------------------------------------------------------------------------
 
         break;
