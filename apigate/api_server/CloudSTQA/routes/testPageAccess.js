@@ -11,7 +11,6 @@ router.use('/', function(req, res, next) {
 
     	//---------------Modify Headers와 URL Rewrite 동시 적용 시 Request Headers/Response Headers 값 체크-----------------
     	var Accept_Language = req.header('Accept-Language');   
-    	console.log(Accept_Language);
     	
 	    if(Accept_Language =='apigw_request'){
 	    	
