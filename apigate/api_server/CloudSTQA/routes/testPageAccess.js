@@ -8,17 +8,17 @@ router.use('/', function(req, res, next) {
   switch (req.method) { 
     
     case 'GET':
-    	//---------------Modify Headers와 URL Rewrite 동시 적용 시 Request Headers 값 체크--------------
-    	var Accept_Language = req.header('Accept-Language');
-        	
+	
+    	//---------------Modify Headers와 URL Rewrite 동시 적용 시 Request Headers/Response Headers 값 체크-----------------
+    	var Accept_Language = req.header('Accept-Language');       	
         console.log(Accept_Language);
-        res.end('Server recieved header info - Accept-Language: ' + Accept_Language);	
-        //-------------------------------------------------------------------------------------
         
-        //--------------Modify Headers와 URL Rewrite 동시 적용 시 Response headers 값 체크--------------
 		res.setHeader('Content-Type', 'cloud/stqa;charset=UTF-8');
 		res.setHeader('x-response-header', 'x-value');
-        //-------------------------------------------------------------------------------------
+		
+        res.end('Server recieved header info - Accept-Language: ' + Accept_Language);	
+        //---------------------------------------------------------------------------------------------------------
+
         break;
         
     case 'POST':
