@@ -56,8 +56,7 @@ app.use('/access/testPage/sleep', testPageSleep);
 app.use('/access/testPage/timeOut', testPageTimeOut);
 
 //Obtain Parameter with GET/POST method 
-//app.use('/access/%7Bparam%7D', param);
-app.use('/access/{param}', param);
+app.use('/access/%7Bparam%7D', param);
 app.use('/access/param', param);
 
 //Test Send cookie
