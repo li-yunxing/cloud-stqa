@@ -91,6 +91,7 @@ app.use('/access/testPage/URLRewrite', URLRewrite);
 
 //URL Rewrite - Pattern 2
 app.use('/access2/testPage2/012MTx7HSR1BScKL/try', testPageAccess);
+app.use('/access2/testPage3/012MTx7HSR1BScKL/try', URLRewrite);
 app.use('/access2/testPage2/U9s5p8tPIS2Q44g8/try', URLRewrite);
 app.use('/access2/012MTx7HSR1BScKL/try', URLRewrite);
 app.use('/access/appkeys/appkey1/try', testPageAccess);
