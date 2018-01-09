@@ -16,11 +16,11 @@ router.post('/', function(req, res, next) {
 
   form.parse(req, function(err, fields, files) {
 
-    if (err) {
-
-      res.json({'avatar':'error'}); 
-      return;
-    }
+	if (err || (files.avatar == undefined)) {
+	        console.log("error=", err, files);
+	        res.json({'avatar':'error'});
+	      return;
+	}
 
         var extName = '';  
     switch (files.avatar.type) { 
