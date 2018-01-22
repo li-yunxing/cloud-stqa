@@ -4,9 +4,6 @@ var router = express.Router();
 router.get('/', function(req, res, next) {	
 		
 		var file = req.query.file
-
-		res.setHeader('Content-Type', 'cloud/stqa;charset=UTF-8');
-		res.setHeader('Content-Language', 'cn');	
 		
 	    switch (file) { 
 	    
