@@ -104,6 +104,7 @@ app.use('/access2/012MTx7HSR1BScKL/tre', testPageAccess);
 app.use('/access2/012MTx7HSR1BScKL/other', URLRewrite);
 app.use('/test/apigw/avg', testPageAccess);
 app.use('/test/apigw/sum', URLRewrite);
+app.use('/test/stqa/sum', testPageAccess);
 app.use('/test/cloud/stqa/avg', URLRewrite);
 
 //--------------------------------------------------
