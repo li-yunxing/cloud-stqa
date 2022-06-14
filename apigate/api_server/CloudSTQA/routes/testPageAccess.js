@@ -37,7 +37,7 @@ router.use('/', function(req, res, next) {
         //------------ post log to log & crash -------------
         var options = {
           "method": "POST",
-          "hostname": "api-logncrash.cloud.toast.com",
+          "hostname": "xxxxxx.com",
           "port": null,
           "path": "/v2/log",
           "headers": {
@@ -65,7 +65,7 @@ router.use('/', function(req, res, next) {
           body: 'This log message come from HTTP server.',
           logSource: 'http',
           logType: 'nelo2-log',
-          host: '133.186.138.136' }));
+          host: 'xxx.xxx.xxx.xxx' }));
         req.end();
         //--------------------------------------------------------
         break;
