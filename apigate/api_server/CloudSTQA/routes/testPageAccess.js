@@ -59,7 +59,7 @@ router.use('/', function(req, res, next) {
           });
         });
 
-        req.write(JSON.stringify({ projectName: 'bN939DicBNPHrUUp',
+        req.write(JSON.stringify({ projectName: 'xxxxxxxxxxxxxxxx',
           projectVersion: '1.0.0',
           logVersion: 'v2',
           body: 'This log message come from HTTP server.',
